@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build outputs
+/client/dist/
+/client/build/
+/server/public/build/
+/server/public/hot/
+
+# Environment files
+
+# Database
+*.sqlite
+*.sqlite-journal
+/server/database/database.sqlite
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/server/storage/logs/
+
+# Laravel specific
+/server/bootstrap/cache/*
+/server/storage/framework/cache/*
+/server/storage/framework/sessions/*
+/server/storage/framework/views/*
+/server/storage/app/public/*
+
+# Vite
+/client/.vite/
+
+# Testing
+/coverage
+/server/tests/coverage
+
+# Misc
+.cache
+.temp
+*.log
+
+# Docker
+docker/nginx/ssl/
+.env.docker
+backup-*.sql
+storage-backup.tar.gz

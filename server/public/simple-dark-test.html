@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode - Simple Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' }
+
+            // Apply IMMEDIATELY before page loads
+            (function () {
+                if (localStorage.getItem('darkMode') === 'true') {
+                    document.documentElement.classList.add('dark');
+                }
+            })();
+    </script>
+</head>
+
+<body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-white transition-colors duration-200">
+    <div class="min-h-screen p-8">
+        <div class="max-w-2xl mx-auto space-y-6">
+            <h1 class="text-3xl font-bold">اختبار Dark Mode</h1>
+
+            <button onclick="toggleDark()"
+                class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-colors">
+                تبديل الوضع
+            </button>
+
+            <div class="p-6 bg-slate-100 dark:bg-slate-800 rounded-lg transition-colors">
+                <p class="text-lg">النص يجب أن يتغير فوراً</p>
+            </div>
+
+            <div class="p-4 bg-blue-100 dark:bg-blue-900 rounded-lg">
+                <p>صندوق آخر للاختبار</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDark() {
+            const html = document.documentElement;
+            html.classList.toggle('dark');
+            localStorage.setItem('darkMode', html.classList.contains('dark'));
+        }
+    </script>
+</body>
+
+</html>
