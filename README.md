@@ -267,7 +267,7 @@ mediremind/
 
 ## 📞 التواصل
 
-- **Email**: ydm07652.@gmail.com
+- **Email**: ydm07652@gmail.com
 - **WhatsApp**: +20 102 793 1470
 - **Phone**: 01027931470
 
