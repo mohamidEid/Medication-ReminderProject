@@ -209,6 +209,224 @@
         </div>
     </section>
 
+    <!-- Success Story Section -->
+    <section
+        class="py-24 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-950/30 dark:to-purple-950/30 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div
+            class="absolute top-0 left-0 w-96 h-96 bg-indigo-300/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-96 h-96 bg-purple-300/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Story Content -->
+                <div>
+                    <h2 class="text-4xl font-bold dark:text-white leading-tight">
+                        كيف غيّر MediRemind حياة
+                        <span class="text-transparent bg-clip-text bg-gradient-to-l from-indigo-600 to-purple-600">عائلة
+                            أحمد</span>
+                    </h2>
+
+                    <div class="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <p class="text-lg">
+                            "كنت أعتني بوالدتي المسنة التي تتناول 6 أنواع مختلفة من الأدوية يومياً. كان الأمر مرهقاً
+                            ومربكاً، وأحياناً كنا ننسى الجرعات."
+                        </p>
+                        <p>
+                            بعد استخدام MediRemind، أصبح كل شيء منظماً. التنبيهات تصلني وتصل لوالدتي على الواتساب،
+                            والتقارير الشهرية ساعدت الطبيب على متابعة حالتها بدقة. <strong
+                                class="text-indigo-600 dark:text-indigo-400">لم ننسَ جرعة واحدة منذ 8 أشهر!</strong>
+                        </p>
+                    </div>
+
+                    <div class="flex items-center gap-4 pt-4">
+                        <div
+                            class="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                            أ
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg dark:text-white">أحمد سامي</h4>
+                            <p class="text-sm text-slate-500">القاهرة، مصر • يستخدم MediRemind منذ 8 أشهر</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4 pt-6">
+                        <div
+                            class="text-center p-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border border-indigo-100 dark:border-slate-700">
+                            <div class="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-1">100%</div>
+                            <div class="text-xs text-slate-600 dark:text-slate-400">نسبة الالتزام</div>
+                        </div>
+                        <div
+                            class="text-center p-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border border-indigo-100 dark:border-slate-700">
+                            <div class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1">6</div>
+                            <div class="text-xs text-slate-600 dark:text-slate-400">أدوية يومية</div>
+                        </div>
+                        <div
+                            class="text-center p-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border border-indigo-100 dark:border-slate-700">
+                            <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">0</div>
+                            <div class="text-xs text-slate-600 dark:text-slate-400">جرعات منسية</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Element -->
+                <div class="order-1 lg:order-2 relative">
+                    <div
+                        class="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white dark:border-slate-800">
+                        <div
+                            class="aspect-[4/3] bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/40 dark:to-purple-900/40 flex items-center justify-center p-8">
+                            <div class="space-y-6 w-full">
+                                <!-- Calendar Widget -->
+                                <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-xl">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h4 class="font-bold text-lg dark:text-white">ديسمبر 2024</h4>
+                                        <div class="flex gap-2">
+                                            <i data-lucide="calendar" class="w-5 h-5 text-indigo-600"></i>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-7 gap-2 text-center">
+                                        <div class="text-xs text-slate-400 font-medium">س</div>
+                                        <div class="text-xs text-slate-400 font-medium">ج</div>
+                                        <div class="text-xs text-slate-400 font-medium">خ</div>
+                                        <div class="text-xs text-slate-400 font-medium">أ</div>
+                                        <div class="text-xs text-slate-400 font-medium">ث</div>
+                                        <div class="text-xs text-slate-400 font-medium">ن</div>
+                                        <div class="text-xs text-slate-400 font-medium">ح</div>
+
+                                        <div class="w-8 h-8 flex items-center justify-center rounded-lg text-sm"></div>
+                                        <div class="w-8 h-8 flex items-center justify-center rounded-lg text-sm"></div>
+                                        <div
+                                            class="w-8 h-8 flex items-center justify-center rounded-lg text-sm bg-green-100 text-green-700 font-bold relative">
+                                            <div class="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full">
+                                            </div>
+                                            1
+                                        </div>
+                                        <div
+                                            class="w-8 h-8 flex items-center justify-center rounded-lg text-sm bg-green-100 text-green-700 font-bold">
+                                            2</div>
+                                        <div
+                                            class="w-8 h-8 flex items-center justify-center rounded-lg text-sm bg-green-100 text-green-700 font-bold">
+                                            3</div>
+                                        <div
+                                            class="w-8 h-8 flex items-center justify-center rounded-lg text-sm bg-green-100 text-green-700 font-bold">
+                                            4</div>
+                                        <div
+                                            class="w-8 h-8 flex items-center justify-center rounded-lg text-sm bg-green-100 text-green-700 font-bold">
+                                            5</div>
+                                    </div>
+                                    <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
+                                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                        <span>جميع الجرعات في الموعد</span>
+                                    </div>
+                                </div>
+
+                                <!-- Achievement Badge -->
+                                <div
+                                    class="bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl p-6 text-white relative overflow-hidden">
+                                    <div
+                                        class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2">
+                                    </div>
+                                    <div class="relative z-10">
+                                        <div class="flex items-center gap-3 mb-2">
+                                            <i data-lucide="award" class="w-8 h-8"></i>
+                                            <h5 class="font-bold text-lg">إنجاز رائع!</h5>
+                                        </div>
+                                        <p class="text-sm opacity-90">انتظام كامل لمدة 240 يوم متتالي 🎉</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold dark:text-white mb-3">أرقام تتحدث عن نفسها</h2>
+                <p class="text-slate-600 dark:text-slate-400">إحصائيات حقيقية من مستخدمينا</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Stat 1 -->
+                <div class="text-center group">
+                    <div
+                        class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-indigo-100 to-indigo-200 dark:from-indigo-900/40 dark:to-indigo-800/40 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i data-lucide="users" class="w-10 h-10 text-indigo-600 dark:text-indigo-400"></i>
+                    </div>
+                    <div class="text-4xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">+10K</div>
+                    <div class="text-sm text-slate-600 dark:text-slate-400">مستخدم نشط</div>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="text-center group">
+                    <div
+                        class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/40 dark:to-purple-800/40 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i data-lucide="bell" class="w-10 h-10 text-purple-600 dark:text-purple-400"></i>
+                    </div>
+                    <div class="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">500K+</div>
+                    <div class="text-sm text-slate-600 dark:text-slate-400">تنبيه مُرسل</div>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="text-center group">
+                    <div
+                        class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/40 dark:to-blue-800/40 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i data-lucide="check-circle" class="w-10 h-10 text-blue-600 dark:text-blue-400"></i>
+                    </div>
+                    <div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">98%</div>
+                    <div class="text-sm text-slate-600 dark:text-slate-400">نسبة الالتزام</div>
+                </div>
+
+                <!-- Stat 4 -->
+                <div class="text-center group">
+                    <div
+                        class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/40 dark:to-green-800/40 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i data-lucide="star" class="w-10 h-10 text-green-600 dark:text-green-400"></i>
+                    </div>
+                    <div class="text-4xl font-bold text-green-600 dark:text-green-400 mb-2">4.9/5</div>
+                    <div class="text-sm text-slate-600 dark:text-slate-400">تقييم المستخدمين</div>
+                </div>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="mt-16 pt-12 border-t border-slate-200 dark:border-slate-800">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
+                    <div class="text-center">
+                        <div class="flex items-center justify-center gap-2 text-slate-600 dark:text-slate-400">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                            <span class="font-medium">بيانات مشفرة</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="flex items-center justify-center gap-2 text-slate-600 dark:text-slate-400">
+                            <i data-lucide="lock" class="w-6 h-6"></i>
+                            <span class="font-medium">حماية كاملة</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="flex items-center justify-center gap-2 text-slate-600 dark:text-slate-400">
+                            <i data-lucide="zap" class="w-6 h-6"></i>
+                            <span class="font-medium">سريع جداً</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="flex items-center justify-center gap-2 text-slate-600 dark:text-slate-400">
+                            <i data-lucide="heart" class="w-6 h-6"></i>
+                            <span class="font-medium">صُنع بحب</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- How It Works Section -->
     <section class="py-24 bg-slate-50 dark:bg-slate-900 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

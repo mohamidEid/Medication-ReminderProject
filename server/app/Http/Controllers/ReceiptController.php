@@ -61,14 +61,13 @@ class ReceiptController extends Controller
     {
         $receipt = SubscriptionReceipt::with(['user'])->findOrFail($id);
 
-        // Check authorization
+        //Check authorization
         if (auth()->id() !== $receipt->user_id && !auth()->user()->hasRole(['admin', 'super_admin'])) {
             abort(403);
         }
 
         return view('receipts.show', compact('receipt'));
     }
-}
 
     /**
      * Print receipt page
@@ -84,3 +83,4 @@ class ReceiptController extends Controller
 
         return view('receipts.print', compact('receipt'));
     }
+}

@@ -49,7 +49,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
     <style>
         body {
@@ -108,7 +108,7 @@
                         <span>الاشتراك</span>
                     </a>
 
-                    <a href="{{ route('settings') }}"
+                    <a href="{{ route('settings.index') }}"
                         class="flex items-center gap-3 px-4 py-3 rounded-xl {{ request()->routeIs('settings') ? 'bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800' }} transition-colors">
                         <i data-lucide="settings" class="w-5 h-5"></i>
                         <span>الإعدادات</span>
@@ -165,7 +165,7 @@
 
                             <div x-show="open" @click.away="open = false" x-transition
                                 class="absolute left-0 mt-2 w-48 bg-white dark:bg-slate-800 rounded-xl shadow-lg py-1 z-50 border border-slate-200 dark:border-slate-700">
-                                <a href="{{ route('settings') }}"
+                                <a href="{{ route('settings.index') }}"
                                     class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700">
                                     الإعدادات
                                 </a>
@@ -190,9 +190,19 @@
     </div>
 
     <script>
-        lucide.createIcons();
-
+        // تحميل أيقونات Lucide عند تحميل الصفحة
         document.addEventListener('DOMContentLoaded', function() {
+            // تحميل جميع الأيقونات
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+
+                // إعادة تحميل الأيقونات كل 500ms (للمحتوى الديناميكي)
+                setInterval(() => {
+                    lucide.createIcons();
+                }, 500);
+            }
+
+            // Dark mode toggle
             const isDark = document.documentElement.classList.contains('dark');
             document.querySelectorAll('[data-dark-toggle]').forEach(btn => {
                 btn.textContent = isDark ? '☀️' : '🌙';
@@ -200,6 +210,8 @@
             });
         });
     </script>
+
+    @stack('scripts')
 </body>
 
 </html>

@@ -35,4 +35,25 @@ return [
         ],
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | SMS & WhatsApp Configuration
+    |--------------------------------------------------------------------------
+    */
+
+    'sms_provider' => env('SMS_PROVIDER', 'twilio'), // twilio, custom
+
+    'twilio' => [
+        'sid' => env('TWILIO_SID'),
+        'token' => env('TWILIO_AUTH_TOKEN'),
+        'phone_from' => env('TWILIO_PHONE_FROM'),
+        'whatsapp_from' => env('TWILIO_WHATSAPP_FROM', 'whatsapp:+14155238886'),
+    ],
+
+    'custom_sms' => [
+        'api_key' => env('CUSTOM_SMS_API_KEY'),
+        'api_url' => env('CUSTOM_SMS_API_URL'),
+        'from' => env('CUSTOM_SMS_FROM'),
+    ],
+
 ];

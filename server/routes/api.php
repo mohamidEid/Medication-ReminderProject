@@ -96,3 +96,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
 // Public route for viewing shared treatment plans
 Route::get('/shared/treatment-plan/{token}', [TreatmentPlanController::class, 'view']);
+
+// SMS Test Routes
+Route::post('/test/sms', [App\Http\Controllers\Api\NotificationTestController::class, 'testSms']);
+Route::post('/test/whatsapp', [App\Http\Controllers\Api\NotificationTestController::class, 'testWhatsApp']);
+Route::get('/test/provider-info', [App\Http\Controllers\Api\NotificationTestController::class, 'getProviderInfo']);
+Route::post('/test/medicine-reminder', [App\Http\Controllers\Api\NotificationTestController::class, 'testMedicineReminder']);

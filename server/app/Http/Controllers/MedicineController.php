@@ -3,75 +3,134 @@
 namespace App\Http\Controllers;
 
 use App\Models\Medicine;
-use App\Models\Dose;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreMedicineRequest;
+use App\Services\MedicineService;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
 
+/**
+ * Medicine Controller
+ *
+ * Handles medicine management for authenticated users
+ * Following Clean Code principles with Service Layer pattern
+ */
 class MedicineController extends Controller
 {
-    public function index()
+    use \Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+
+    /**
+     * Create a new controller instance.
+     */
+    public function __construct(
+        protected MedicineService $medicineService
+    ) {
+        // Middleware is applied in routes/web.php
+    }
+
+
+    /**
+     * Display a listing of user's medicines
+     *
+     * @return View
+     */
+    public function index(): View
     {
-        $medicines = Auth::user()->medicines()->latest()->get();
+        $medicines = $this->medicineService->getUserMedicines(Auth::id());
+
         return view('medicines.index', compact('medicines'));
     }
 
-    public function store(Request $request)
+    /**
+     * Show the form for creating a new medicine
+     *
+     * @return View
+     */
+    public function create(): View
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'dosage' => 'required|string|max:255',
-            'frequency' => 'required|in:daily,twice_daily,three_times_daily',
-            'start_date' => 'required|date',
-            'times' => 'required|array',
-            'times.*' => 'required|date_format:H:i',
-        ]);
-
-        $medicine = Auth::user()->medicines()->create([
-            'name' => $request->name,
-            'dosage' => $request->dosage,
-            'frequency' => $request->frequency,
-            'start_date' => $request->start_date,
-            'times' => json_encode($request->times),
-            'instructions' => $request->instructions,
-        ]);
-
-        // Generate Doses for the next 30 days
-        $this->generateDoses($medicine);
-
-        return redirect()->route('web.medicines.index')->with('success', 'تم إضافة الدواء وسجل الجرعات بنجاح!');
+        return view('medicines.create');
     }
 
-    public function destroy(Medicine $medicine)
+    /**
+     * Store a newly created medicine
+     *
+     * @param StoreMedicineRequest $request
+     * @return RedirectResponse
+     */
+    public function store(StoreMedicineRequest $request): RedirectResponse
     {
-        if ($medicine->user_id !== Auth::id()) {
-            abort(403);
-        }
+        $medicine = $this->medicineService->createMedicine(
+            Auth::id(),
+            $request->validated()
+        );
 
-        $medicine->delete();
-        return redirect()->route('web.medicines.index')->with('success', 'تم حذف الدواء بنجاح.');
+        return redirect()
+            ->route('medicines.index')
+            ->with('success', 'تم إضافة الدواء وسجل الجرعات بنجاح!');
     }
 
-    private function generateDoses(Medicine $medicine)
+    /**
+     * Display the specified medicine
+     *
+     * @param Medicine $medicine
+     * @return View
+     */
+    public function show(Medicine $medicine): View
     {
-        $startDate = Carbon::parse($medicine->start_date);
-        $endDate = $startDate->copy()->addDays(30); // Generate for 30 days
-        $times = json_decode($medicine->times);
+        $this->authorize('view', $medicine);
 
-        for ($date = $startDate; $date->lte($endDate); $date->addDay()) {
-            foreach ($times as $time) {
-                $scheduledTime = Carbon::parse($date->format('Y-m-d') . ' ' . $time);
+        $medicine->load(['doses' => function ($query) {
+            $query->latest('scheduled_time')->limit(20);
+        }]);
 
-                // Skip if time is in the past
-                if ($scheduledTime->isPast()) continue;
+        return view('medicines.show', compact('medicine'));
+    }
 
-                Dose::create([
-                    'user_id' => $medicine->user_id,
-                    'medicine_id' => $medicine->id,
-                    'scheduled_time' => $scheduledTime,
-                    'status' => 'pending'
-                ]);
-            }
-        }
+    /**
+     * Show the form for editing the specified medicine
+     *
+     * @param Medicine $medicine
+     * @return View
+     */
+    public function edit(Medicine $medicine): View
+    {
+        $this->authorize('update', $medicine);
+
+        return view('medicines.edit', compact('medicine'));
+    }
+
+    /**
+     * Update the specified medicine
+     *
+     * @param StoreMedicineRequest $request
+     * @param Medicine $medicine
+     * @return RedirectResponse
+     */
+    public function update(StoreMedicineRequest $request, Medicine $medicine): RedirectResponse
+    {
+        $this->authorize('update', $medicine);
+
+        $medicine->update($request->validated());
+
+        return redirect()
+            ->route('medicines.index')
+            ->with('success', 'تم تحديث الدواء بنجاح!');
+    }
+
+    /**
+     * Remove the specified medicine
+     *
+     * @param Medicine $medicine
+     * @return RedirectResponse
+     */
+    public function destroy(Medicine $medicine): RedirectResponse
+    {
+        $this->authorize('delete', $medicine);
+
+        $this->medicineService->deleteMedicine($medicine);
+
+        return redirect()
+            ->route('medicines.index')
+            ->with('success', 'تم حذف الدواء بنجاح.');
     }
 }

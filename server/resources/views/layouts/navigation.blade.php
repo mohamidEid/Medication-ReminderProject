@@ -101,7 +101,7 @@
                                 <i data-lucide="users" class="w-4 h-4"></i>
                                 المرافقين 👥
                             </a>
-                            <a href="{{ route('settings') }}"
+                            <a href="{{ route('settings.index') }}"
                                 class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 flex items-center gap-2">
                                 <i data-lucide="settings" class="w-4 h-4"></i>
                                 الإعدادات

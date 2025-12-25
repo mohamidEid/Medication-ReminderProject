@@ -88,4 +88,8 @@ class User extends Authenticatable implements FilamentUser
     {
         return $this->hasMany(SubscriptionReceipt::class);
     }
+    public function subscription(): HasOne
+    {
+        return $this->hasOne(Subscription::class)->latestOfMany();
+    }
 }
