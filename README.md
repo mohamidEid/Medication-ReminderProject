@@ -92,6 +92,30 @@
 - **Laravel Scheduler** - Cron Jobs
 - **Queue System** - Background Jobs
 
+
+#### PHP Advanced
+1. ✅ **Match Expression** - بديل switch
+2. ✅ **Type Declarations** - Return Types, Property Types
+3. ✅ **Constructor Property Promotion** - PHP 8 shortcut
+4. ✅ **Null Safe Operator** - `?->`
+5. ✅ **Named Arguments** - Readable code
+
+#### Design Patterns
+6. ✅ **Strategy Pattern** - SMS Providers
+7. ✅ **Observer Pattern** - Eloquent Events
+8. ✅ **Factory Pattern** - Object Creation
+9. ✅ **Repository Pattern** - (جزئي)
+
+#### Security
+10. ✅ **Mass Assignment Protection** - fillable/guarded
+11. ✅ **CSRF Protection**
+
+#### Performance
+12. ✅ **Caching** - Config, Route, View
+13. ✅ **Query Optimization** - Eager Loading, Chunking
+
+
+
 ---
 
 ## ⚡ التثبيت السريع
